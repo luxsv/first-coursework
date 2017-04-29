@@ -1,0 +1,162 @@
+#include <iostream>
+#include <stdio.h>
+#include <cstring>
+using namespace std;
+
+typedef unsigned int ui;
+
+
+struct Student {
+	char FirstName[50];
+	char LastName[50];
+	int Age;
+	bool College;
+//	char Special[5][20];
+	int Averating;
+};
+/*
+void specialList () {
+	//char Special[5][20];
+	strcpy(Special[0], "Programyvannya");
+	strcpy(Special[1], "Hardvare");
+	strcpy(Special[2], "Gymanitaryy");
+}
+*/
+
+
+void createStudent(Student **list, int &size) {
+	Student *temp = new Student[size+1];
+	for (int i=0; i < size; i++) {
+		temp[i] = list[0][i];
+	}
+	cout<<"Enter first name : ";
+	getchar();
+	fgets(temp[size].FirstName, 50, stdin);
+	cout<<"Enter last name : ";
+;
+	fgets(temp[size].LastName, 50 , stdin);
+	Ж
+
+	
+	cout<<"Enter age : ";
+	cin>>temp[size].Age;
+	cout<<"Finish colegee ? enter yes or no : ";
+	char key[4];
+	cin>>key;
+	temp[size].College = !strcmp(key,"yes") ? true : false;
+
+	//printf("student : ");
+	//printf("studen : %s %s aded\n", temp[size].FirstName, temp[size].LastName);
+	cout<<"- - student aded! - -\n";
+	delete[] *list;
+	*list = temp;
+	++size;
+}
+
+
+void printStudent(Student *list,int index) {
+	cout<<"- - - - - - - - - - - - \n";
+	cout<<list[index].FirstName<<list[index].LastName;
+   	cout<<"Age : "<<list[index].Age<<endl; cout<<"finish college : ";
+	cout<<(list[index].College == true ? "yes" : "no")<<endl;
+}
+
+
+void printAllStuden(Student *list, int size) {
+	for (int i = 0; i < size; i++) {
+		printStudent(list, i);
+	}
+}
+
+
+int findStudent(Student *list, int size) {
+	cout<<"Enter last name\n";
+	char key[50];
+	getchar();
+	cin>>key;
+	//fgets(key, 50, stdin);
+	for (int i = 0; i < size; i++) {
+		if (strstr(list[i].LastName, key) != nullptr)
+		cout<<"find index "<<i<<" : "<<strstr(list[i].LastName, key)<<endl;
+	}
+
+	cout<<"Press index to choose studen\n";
+	int index;
+	cin>>index;
+	if (index >= size || index < 0) {
+		cout<<"Erro index\n"; return -1;
+	} else {
+		printStudent(list, index);
+	}
+	return index;
+}
+
+
+
+void deleteStudent(Student **list, int &size) {
+	int index = findStudent(*list, size);
+	if (index >= size) {
+		cout<<"error index\n";
+		return;
+	}
+	--size;
+	Student *temp = new Student[size];
+	for (int i = 0, j = 0; i < size; i++,j++) {
+		if (i == index) {++j;}
+		temp[i] = list[0][j];	
+	}
+	delete[] *list;
+	*list = temp;
+}
+
+
+
+void help(){	
+	cout<<"  ___Command list___\n";
+   jjcout<<"|  help - Command list\n";
+	cout<<"|  add - add student\n";
+	cout<<"|  print-print-s-tudent\n";
+	cout<<"|  del - delete student\n";
+	cout<<"|  find - find student for last name\n";
+	cout<<"|  print-all - print full list students base\n";;
+	cout<<"|  exit - exit program\n";
+}
+
+
+
+int menu(Student **list, int &size) {
+	cout<<"enter commnad : ";
+	char key[50];
+	cin>>key;	
+	if (strcmp(key,"help") == 0) {
+		help();
+	} else if (strcmp(key,"add") == 0) {
+		teStudent(list, size);
+	} else if (strcmp(key,"del") == 0) {
+		deleteStudent(list, size);
+	} else if (strcmp(key,"print") == 0) {
+		printStudent(*list, 0);
+	} else if (strcmp(key,"print-all") == 0) {
+		printAllStuden(*list, size);
+	} else if (strcmp(key,"find") == 0) {
+		findStudent(*list, size);
+	} else if (strcmp(key,"exit") == 0) {
+		exit(1);
+	} else {
+		cout<<"eror comand\n"<<endl;
+	}
+	return 0;
+}
+
+
+int main () {
+//	specialList();
+	int size = 0;
+	Student *list = new Student[size];
+	help();
+	while (true) {
+		menu (&list,size);
+	}
+	delete[] list;	
+	return 0;
+}
