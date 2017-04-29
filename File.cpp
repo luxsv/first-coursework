@@ -6,10 +6,10 @@
 using namespace std;
 
 void copyBase(Student **list, int &size, char buffstr[]){
-	Student *temp = new Student[size+1];
+    Student *temp = new Student[size+1];
     for (int i = 0; i < size; i++) {
-		temp[i] = list[0][i];
-	}
+        temp[i] = list[0][i];
+    }
     char buff[50] = {};
     for (int i = 0,j = 0, fl = 0; buff[i] == '\0'; ++i, ++j) {
         if (buffstr[i] == ':') {

@@ -27,43 +27,43 @@ int setAge(){
 
 
 void createStudent(Student **list, int &size) {
-	Student *temp = new Student[size+1];
-	for (int i=0; i < size; i++) {
-		temp[i] = list[0][i];
-	}
-	cout<<"Enter Name : ";
-	cin>>temp[size].Name;
-	cout<<"Enter Surname : ";
-	cin>>temp[size].Surname;
-	cout<<"Enter Middle Name  : ";
-	cin>>temp[size].MiddleName;
-	
+    Student *temp = new Student[size+1];
+    for (int i=0; i < size; i++) {
+        temp[i] = list[0][i];
+    }
+    cout<<"Enter Name : ";
+    cin>>temp[size].Name;
+    cout<<"Enter Surname : ";
+    cin>>temp[size].Surname;
+    cout<<"Enter Middle Name  : ";
+    cin>>temp[size].MiddleName;
+    
     temp[size].Age = setAge();
 
     cout<<"Finish colegee ? enter yes or no : ";
-	char key[4];
-	cin>>key;
-	temp[size].College = !strcmp(key,"yes") ? true : false;
+    char key[4];
+    cin>>key;
+    temp[size].College = !strcmp(key,"yes") ? true : false;
 
-	cout<<"Press digit for special : \n";
-	cout<< "1)Code(default)  2)Hardvare  3)Gymanitaryy\n";
-	char fl = 0;
-	cout<<"> ";
-	getchar();
-	fl = getchar();
-	switch(fl){
-		case '1':temp[size].Special = Code;	
-		break;
-		case '2':temp[size].Special = Hard;	
+    cout<<"Press digit for special : \n";
+    cout<< "1)Code(default)  2)Hardvare  3)Gymanitaryy\n";
+    char fl = 0;
+    cout<<"> ";
+    getchar();
+    fl = getchar();
+    switch(fl){
+        case '1':temp[size].Special = Code; 
         break;
-		case '3':temp[size].Special = Gyman;	
-		break;
-		default :temp[size].Special = Code;	
-	}	
-	cout<<"- - student aded! - -\n";
-	delete[] *list;
-	*list = temp;
-	++size;
+        case '2':temp[size].Special = Hard; 
+        break;
+        case '3':temp[size].Special = Gyman;    
+        break;
+        default :temp[size].Special = Code; 
+    }   
+    cout<<"- - student aded! - -\n";
+    delete[] *list;
+    *list = temp;
+    ++size;
 }
 
 
@@ -100,13 +100,13 @@ void printList(Student *list, int size){
         cout<<"\t"<<list[i].Age<<"\t";
         cout<<(list[i].College == true ? "yes" : "no")<<"\t\t";
         switch(list[i].Special){
-            case Code : cout<<"Code\n";	
+            case Code : cout<<"Code\n"; 
                         break;
-            case Hard : cout<<"Hard\n";	
+            case Hard : cout<<"Hard\n"; 
                         break;
-            case Gyman : cout<<"Gymanitaryy\n";	
+            case Gyman : cout<<"Gymanitaryy\n"; 
                         break;
-            default : cout<<"Code\n";	
+            default : cout<<"Code\n";   
         }
     }
 }
@@ -115,25 +115,25 @@ void printListIsSpeciall(Student *list, int size, SpecialList a){
     sortStudentName(list ,size);
     cout<<"- - - - - - - - - - - - - - - - - - - - - - - - -\n"; 
     cout<<"Initial\t\t\t\tSpecial\n";
-	cout<<"- - - - - - - - - - - - - - - - - - - - - - - - -\n"; 
+    cout<<"- - - - - - - - - - - - - - - - - - - - - - - - -\n"; 
     for (int i = 0; i < size; i++) {
         switch(a){
             case Code : 
                 if (list[i].Special == Code){
                 cout<<list[i].Surname<<" "<<list[i].Name<<" "<<list[i].MiddleName<<"\t";
-                cout<<"Code\n";	}
+                cout<<"Code\n"; }
                         break;
             case Hard :
                 if (list[i].Special == Hard){
                 cout<<list[i].Surname<<" "<<list[i].Name<<" "<<list[i].MiddleName<<"\t";
-                cout<<"Hard\n";	}
+                cout<<"Hard\n"; }
                         break;
             case Gyman :
                 if (list[i].Special == Gyman){
                 cout<<list[i].Surname<<" "<<list[i].Name<<" "<<list[i].MiddleName<<"\t";
-                cout<<"Gymanitaryy\n";}	
+                cout<<"Gymanitaryy\n";} 
                         break;
-            default :   break;	
+            default :   break;  
         }
     }
 
@@ -150,98 +150,98 @@ void printListIsCollege(Student *list, int size){
             cout<<list[i].Surname<<" "<<list[i].Name<<" "<<list[i].MiddleName<<"\t";
             cout<<(list[i].College == true ? "yes" : "no")<<"\t\t";
             switch(list[i].Special){
-                case Code : cout<<"Code\n";	
+                case Code : cout<<"Code\n"; 
                             break;
-                case Hard : cout<<"Hard\n";	
+                case Hard : cout<<"Hard\n"; 
                             break;
-                case Gyman : cout<<"Gymanitaryy\n";	
+                case Gyman : cout<<"Gymanitaryy\n"; 
                              break;
-                default : cout<<"Code\n";	
+                default : cout<<"Code\n";   
             }
         }
     }
 }
 
 void printStudent(Student *list, int i) {
-	cout<<"- - - - - - - - - - - - \n";
+    cout<<"- - - - - - - - - - - - \n";
     cout<<list[i].Surname<<" "<<list[i].Name<<" "<<list[i].MiddleName<<endl;
-   	cout<<"Age : "<<list[i].Age<<endl; cout<<"finish college : ";
-	cout<<(list[i].College == true ? "yes" : "no")<<endl;
-	cout<<"Special : ";
-	switch(list[i].Special){
-		case Code : cout<<"Code\n";	
-		break;
-		case Hard : cout<<"Hard\n";	
-		break;
-		case Gyman : cout<<"Gymanitaryy\n";	
-		break;
-		default : cout<<"Code\n";	
-	}
+    cout<<"Age : "<<list[i].Age<<endl; cout<<"finish college : ";
+    cout<<(list[i].College == true ? "yes" : "no")<<endl;
+    cout<<"Special : ";
+    switch(list[i].Special){
+        case Code : cout<<"Code\n"; 
+        break;
+        case Hard : cout<<"Hard\n"; 
+        break;
+        case Gyman : cout<<"Gymanitaryy\n"; 
+        break;
+        default : cout<<"Code\n";   
+    }
 }
 
 
 void printAll(Student *list, int size) {
-	for (int i = 0; i < size; i++) {
-		printStudent(list, i);
-	}
+    for (int i = 0; i < size; i++) {
+        printStudent(list, i);
+    }
 }
 
 
 int findStudent(Student *list, int size) {
-	cout<<"enter lastname find student : ";
-	char key[50];
-	getchar();
-	cin>>key;
-	for (int i = 0; i < size; i++) {
-		if (strstr(list[i].Surname, key) != nullptr)
-		cout<<"find index "<<i<<" : "<<list[i].Name<<" "<<list[i].Surname<<endl;
-	}
-	cout<<"Press index to choose studen : ";
-	int index;
-	cin>>index;
-	if (index >= size || index < 0) {
-		cout<<"Error index\n"; return -1;
-	}
-	return index;
+    cout<<"enter lastname find student : ";
+    char key[50];
+    getchar();
+    cin>>key;
+    for (int i = 0; i < size; i++) {
+        if (strstr(list[i].Surname, key) != nullptr)
+        cout<<"find index "<<i<<" : "<<list[i].Name<<" "<<list[i].Surname<<endl;
+    }
+    cout<<"Press index to choose studen : ";
+    int index;
+    cin>>index;
+    if (index >= size || index < 0) {
+        cout<<"Error index\n"; return -1;
+    }
+    return index;
 }
 
 
 
 void deleteStudent(Student **list, int &size) {
-	int index = findStudent(*list, size);
-	if (index >= size) {
-		cout<<"error index\n";
-		return;
-	}
-	--size;
-	Student *temp = new Student[size];
-	for (int i = 0, j = 0; i < size; i++,j++) {
-		if (i == index) {++j;}
-		temp[i] = list[0][j];	
-	}
-	delete[] *list;
-	*list = temp;
+    int index = findStudent(*list, size);
+    if (index >= size) {
+        cout<<"error index\n";
+        return;
+    }
+    --size;
+    Student *temp = new Student[size];
+    for (int i = 0, j = 0; i < size; i++,j++) {
+        if (i == index) {++j;}
+        temp[i] = list[0][j];   
+    }
+    delete[] *list;
+    *list = temp;
     cout<<"Student deletet\n";
 }
 
 
 void middleAgeSpecialStudent(Student *list, int size){
     int age = 0, count = 0 , spec; 
-	cout<<"Press digit for special middle age: \n";
-	cout<< "1)Code(default)  2)Hardvare  3)Gymanitaryy\n";
-	char fl = 0;
-	cout<<"> ";
-	getchar();
-	fl = getchar();
-	switch(fl){
-		case '1': spec = Code;	
-		break;
-		case '2': spec = Hard;	
+    cout<<"Press digit for special middle age: \n";
+    cout<< "1)Code(default)  2)Hardvare  3)Gymanitaryy\n";
+    char fl = 0;
+    cout<<"> ";
+    getchar();
+    fl = getchar();
+    switch(fl){
+        case '1': spec = Code;  
         break;
-		case '3': spec = Gyman;	
-		break;
-		default : spec = Code;	
-	}	
+        case '2': spec = Hard;  
+        break;
+        case '3': spec = Gyman; 
+        break;
+        default : spec = Code;  
+    }   
     for (int i = 0; i < size; i++){
         if (spec == list[i].Special){
             age += list[i].Age;
@@ -272,29 +272,29 @@ void editStudent(Student *list, int size){
     if (strcmp(buff ,"y") != 0){
         strcpy(list[size].MiddleName, buff);
     }
-	
+    
     list[size].Age = setAge();
-		
+        
     cout<<"Finish colegee ? enter yes or no : ";
-	char key[4];
-	cin>>key;
-	list[size].College = !strcmp(key,"yes") ? true : false;
-	cout<<"Press digit for special : \n";
-	cout<< "1)Code(default)  2)Hardvare  3)Gymanitaryy\n";
-	char fl = 0;
-	cout<<"> ";
-	getchar();
-	fl = getchar();
-	switch(fl){
-		case '1':list[size].Special = Code;	
-		break;
-		case '2':list[size].Special = Hard;	
+    char key[4];
+    cin>>key;
+    list[size].College = !strcmp(key,"yes") ? true : false;
+    cout<<"Press digit for special : \n";
+    cout<< "1)Code(default)  2)Hardvare  3)Gymanitaryy\n";
+    char fl = 0;
+    cout<<"> ";
+    getchar();
+    fl = getchar();
+    switch(fl){
+        case '1':list[size].Special = Code; 
         break;
-		case '3':list[size].Special = Gyman;	
-		break;
-		default :list[size].Special = Code;	
-	}	
-	cout<<"- - student edit! - -\n";
+        case '2':list[size].Special = Hard; 
+        break;
+        case '3':list[size].Special = Gyman;    
+        break;
+        default :list[size].Special = Code; 
+    }   
+    cout<<"- - student edit! - -\n";
 }
 
 
