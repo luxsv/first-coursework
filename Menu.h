@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
 #include "Student.h"
 
 using namespace std;
@@ -67,6 +68,8 @@ int menu(Student **list, int &size) {
         printStudent(*list, findStudent(*list, size));
     } else if (strcmp(key, "age") == 0) {
         middleAgeSpecialStudent(*list, size);
+    } else if (strcmp(key, "clear") == 0) {
+        cout << string( 100, '\n' );
     } else if (strcmp(key, "exit") == 0) {
         return 1;
     } else if (strcmp(key, "q") == 0) {

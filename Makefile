@@ -1,7 +1,7 @@
 all:
 	g++ main.cpp Student.cpp File.cpp -o main
 clang:
-	clang++ main.cpp -o main -std=c++14
+	clang++ main.cpp Student.cpp File.cpp -o main -std=c++14
 o:
 	./main
 clean:
