@@ -6,17 +6,17 @@
 using namespace std;
 
 int main () {
-	int size = 0;
-	Student *list = new Student[size];
+    int size = 0;
+    Student *list = new Student[size];
     fileRead(&list,size);
     help();
     int c = 0; 
-	while (!c) {
-		c = menu(&list,size);
-	}
+    while (!c) {
+        c = menu(&list,size);
+    }
     fileWrite(list, size);
-	
-    delete[] list;	
-	return 0;
+    
+    delete[] list;  
+    return 0;
 }
 
