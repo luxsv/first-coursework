@@ -1,2 +1,5 @@
 Kushnir:Sergii:Volodimirovich:25:0:0:
+Onisin:Fedir:Stepanovich:28:0:0:
+Pupkin:Dmutro:Vasilovich:30:1:0:
 Shinkar:Sasha:Mukolayovich:25:1:2:
+Trololoev:Artyr:Viktorovich:20:0:1:
