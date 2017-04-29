@@ -3,24 +3,6 @@
 #include <cstring>
 using namespace std;
 
-
-void defStudent(Student *list) {
-    strcpy(list[0].FirstName, "Serg");	
-    strcpy(list[0].LastName, "Kushnir");	
-    list[0].Age = 25;
-    list[0].College = false;
-    list[0].Special = Code;
-
-    strcpy(list[1].FirstName, "Sasha");	
-    strcpy(list[1].LastName, "shinkar");	
-    list[1].Age = 24;
-    list[1].College = true;
-    list[1].Special = Hard;
-    
-}
-
-
-
 int setAge(){
     int a;
     while(true){
@@ -49,10 +31,12 @@ void createStudent(Student **list, int &size) {
 	for (int i=0; i < size; i++) {
 		temp[i] = list[0][i];
 	}
-	cout<<"Enter Firstname : ";
-	cin>>temp[size].FirstName;
-	cout<<"Enter Lastname : ";
-	cin>>temp[size].LastName;
+	cout<<"Enter Name : ";
+	cin>>temp[size].Name;
+	cout<<"Enter Surname : ";
+	cin>>temp[size].Surname;
+	cout<<"Enter Middle Name  : ";
+	cin>>temp[size].MiddleName;
 	
     temp[size].Age = setAge();
 
@@ -98,7 +82,7 @@ void sortStudentSpecial(Student *list, int size) {
 void sortStudentName(Student *list, int size) {
     for (int i = 1; i < size; i++) {
         for (int j = i; j > 0; j--){
-            if (strcmp(list[j-1].LastName,list[j].LastName) > 0){ 
+            if (strcmp(list[j-1].Surname,list[j].Surname) > 0){ 
                 swap(list[j-1], list[j]); 
             }
         } 
@@ -106,14 +90,13 @@ void sortStudentName(Student *list, int size) {
 }
 
 
-
 void printList(Student *list, int size){
     sortStudentName(list ,size);
-    cout<<"- - - - - - - - - - - - - - - - - - - - - - - - -\n"; 
-    cout<<"Initial\t\tage\tfinish college\tSpecial\n";
-	cout<<"- - - - - - - - - - - - - - - - - - - - - - - - -\n"; 
+    cout<<"- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - -\n"; 
+    cout<<"Initial\t\t\t\t\tage\tfinish college\tSpecial\n";
+    cout<<"- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - -\n"; 
     for (int i = 0; i < size; i++) {
-        cout<<list[i].FirstName<<" "<<list[i].LastName;
+        cout<<list[i].Surname<<" "<<list[i].Name<<" "<<list[i].MiddleName<<"\t";
         cout<<"\t"<<list[i].Age<<"\t";
         cout<<(list[i].College == true ? "yes" : "no")<<"\t\t";
         switch(list[i].Special){
@@ -128,14 +111,64 @@ void printList(Student *list, int size){
     }
 }
 
+void printListIsSpeciall(Student *list, int size, SpecialList a){
+    sortStudentName(list ,size);
+    cout<<"- - - - - - - - - - - - - - - - - - - - - - - - -\n"; 
+    cout<<"Initial\t\t\t\tSpecial\n";
+	cout<<"- - - - - - - - - - - - - - - - - - - - - - - - -\n"; 
+    for (int i = 0; i < size; i++) {
+        switch(a){
+            case Code : 
+                if (list[i].Special == Code){
+                cout<<list[i].Surname<<" "<<list[i].Name<<" "<<list[i].MiddleName<<"\t";
+                cout<<"Code\n";	}
+                        break;
+            case Hard :
+                if (list[i].Special == Hard){
+                cout<<list[i].Surname<<" "<<list[i].Name<<" "<<list[i].MiddleName<<"\t";
+                cout<<"Hard\n";	}
+                        break;
+            case Gyman :
+                if (list[i].Special == Gyman){
+                cout<<list[i].Surname<<" "<<list[i].Name<<" "<<list[i].MiddleName<<"\t";
+                cout<<"Gymanitaryy\n";}	
+                        break;
+            default :   break;	
+        }
+    }
 
-void printStudent(Student *list,int index) {
+
+}
+
+void printListIsCollege(Student *list, int size){
+    sortStudentName(list ,size);
+    cout<<"- - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n"; 
+    cout<<"Initial\t\t\t\tfinish college\tSpecial\n";
+    cout<<"- - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n"; 
+    for (int i = 0; i < size; i++) {
+        if (list[i].College){
+            cout<<list[i].Surname<<" "<<list[i].Name<<" "<<list[i].MiddleName<<"\t";
+            cout<<(list[i].College == true ? "yes" : "no")<<"\t\t";
+            switch(list[i].Special){
+                case Code : cout<<"Code\n";	
+                            break;
+                case Hard : cout<<"Hard\n";	
+                            break;
+                case Gyman : cout<<"Gymanitaryy\n";	
+                             break;
+                default : cout<<"Code\n";	
+            }
+        }
+    }
+}
+
+void printStudent(Student *list, int i) {
 	cout<<"- - - - - - - - - - - - \n";
-	cout<<list[index].FirstName<<" "<<list[index].LastName<<endl;
-   	cout<<"Age : "<<list[index].Age<<endl; cout<<"finish college : ";
-	cout<<(list[index].College == true ? "yes" : "no")<<endl;
+    cout<<list[i].Surname<<" "<<list[i].Name<<" "<<list[i].MiddleName<<endl;
+   	cout<<"Age : "<<list[i].Age<<endl; cout<<"finish college : ";
+	cout<<(list[i].College == true ? "yes" : "no")<<endl;
 	cout<<"Special : ";
-	switch(list[index].Special){
+	switch(list[i].Special){
 		case Code : cout<<"Code\n";	
 		break;
 		case Hard : cout<<"Hard\n";	
@@ -160,8 +193,8 @@ int findStudent(Student *list, int size) {
 	getchar();
 	cin>>key;
 	for (int i = 0; i < size; i++) {
-		if (strstr(list[i].LastName, key) != nullptr)
-		cout<<"find index "<<i<<" : "<<list[i].FirstName<<" "<<list[i].LastName<<endl;
+		if (strstr(list[i].Surname, key) != nullptr)
+		cout<<"find index "<<i<<" : "<<list[i].Name<<" "<<list[i].Surname<<endl;
 	}
 	cout<<"Press index to choose studen : ";
 	int index;
@@ -221,17 +254,23 @@ void middleAgeSpecialStudent(Student *list, int size){
 
 void editStudent(Student *list, int size){
     char buff[50];
-    cout<<"Enter new Firstname or y not change : ";
+    cout<<"Enter new Name or y not change : ";
     cin>>buff;
     
     if (strcmp(buff, "y") != 0){
-        strcpy(list[size].FirstName, buff);
+        strcpy(list[size].Name, buff);
     }
 
-    cout<<"Enter new Lastname or y not change : ";
+    cout<<"Enter new Surname or y not change : ";
     cin>>buff;
     if (strcmp(buff ,"y") != 0){
-        strcpy(list[size].LastName, buff);
+        strcpy(list[size].Surname, buff);
+    }
+    
+    cout<<"Enter new Middle name or y not change : ";
+    cin>>buff;
+    if (strcmp(buff ,"y") != 0){
+        strcpy(list[size].MiddleName, buff);
     }
 	
     list[size].Age = setAge();

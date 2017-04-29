@@ -8,13 +8,15 @@ using namespace std;
 int main () {
 	int size = 0;
 	Student *list = new Student[size];
-    //defStudent(list);
     fileRead(&list,size);
     help();
-	while (true) {
-		menu(&list,size);
+    int c = 0; 
+	while (!c) {
+		c = menu(&list,size);
 	}
-	delete[] list;	
+    fileWrite(list, size);
+	
+    delete[] list;	
 	return 0;
 }
 
