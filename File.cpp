@@ -44,7 +44,7 @@ void copyBase(Student **list, int &size, char buffstr[]){
 
 void fileRead(Student **list, int &size){
     FILE *f1;
-    if ((f1 = fopen("base.txt", "r")) == NULL)
+    if ((f1 = fopen("base", "r")) == NULL)
         cout<<"file not open\n";     
     char buffstr[255] = {};
     fgets(buffstr,255,f1);
@@ -59,7 +59,7 @@ void fileRead(Student **list, int &size){
 
 void fileWrite(Student *list, int size){
     FILE *f1;
-    if ((f1 = fopen("base.txt", "w")) == NULL)
+    if ((f1 = fopen("base", "w")) == NULL)
         cout<<"file not open\n";     
     char buff[50]{};
 

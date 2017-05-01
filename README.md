@@ -10,9 +10,10 @@ Information - search engine , console version
 Install and run app
 
 ```sh
+$ git clone https://github.com/luxsv/stepKusr.git 
 $ cd stepKurs
 $ make
-$ ./main
+$ ./course
 ```
 
 ### Installation Windows

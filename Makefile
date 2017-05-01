@@ -1,8 +1,8 @@
 all:
-	g++ main.cpp Student.cpp File.cpp -o main
+	g++ main.cpp Student.cpp File.cpp -o course
 clang:
-	clang++ main.cpp Student.cpp File.cpp -o main -std=c++14
-o:
-	./main
+	clang++ main.cpp Student.cpp File.cpp -o course -std=c++14
+run:
+	./course
 clean:
-	rm -rf main *.o 
+	rm -rf course *.o 
