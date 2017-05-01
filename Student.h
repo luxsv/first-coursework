@@ -4,12 +4,12 @@
 enum SpecialList {Code, Hard, Gyman};
 
 struct Student {
-	char Name[50];
-	char Surname[50];
-	char MiddleName[50];
+    char Name[50];
+    char Surname[50];
+    char MiddleName[50];
     int Age;
-	bool College;
-	SpecialList Special;
+    bool College;
+    SpecialList Special;
 };
 
 void printListIsCollege(Student *list, int size);

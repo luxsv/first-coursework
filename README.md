@@ -14,6 +14,11 @@ $ cd stepKurs
 $ make
 $ ./main
 ```
+
+### Installation Windows
+```sh
+```
+
 **Free Software**
 
 
