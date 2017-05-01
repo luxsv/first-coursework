@@ -4,14 +4,14 @@ Information - search engine , console version
 
 # New Features!
 
-  - Save base file base.txt
+  - Save to file base
 
 ### Installation linux
 Install and run app
 
 ```sh
-$ git clone https://github.com/luxsv/stepKusr.git 
-$ cd stepKurs
+$ git clone https://github.com/luxsv/first-coursework
+$ cd first-coursework
 $ make
 $ ./course
 ```
