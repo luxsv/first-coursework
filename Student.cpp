@@ -8,7 +8,6 @@ int setAge(){
     while(true){
         cout<<"Enter age : ";
         cin >> a;
-    
         if (cin.good()){
             cin.ignore(20,'\n');
             if (a < 12 || a > 35){

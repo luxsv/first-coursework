@@ -25,7 +25,6 @@ int menu(Student **list, int &size) {
     cout<<"enter comand : ";
     char key[50];
     cin>>key;   
-    
     if (strcmp(key, "help") == 0) {
         help();
     } else if (strcmp(key, "add") == 0) {
@@ -56,8 +55,6 @@ int menu(Student **list, int &size) {
                 break;
             default: break;
         }
-
-
     } else if (strcmp(key,"sort-n") == 0) {
         sortStudentName(*list, size);
         cout<<"Student name sorted\n";
