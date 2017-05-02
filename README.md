@@ -1,8 +1,9 @@
 # Coursework
 
-Information - search engine , console version
+Information - search engine, console version
+Detailed in the file task.txt
 
-# New Features!
+### New Features!
 
   - Save to file base
 
@@ -17,8 +18,7 @@ $ ./course
 ```
 
 ### Installation Windows
-```sh
-```
+  - using MVS_2017
 
 **Free Software**
 
