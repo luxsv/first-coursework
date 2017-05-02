@@ -66,7 +66,11 @@ int menu(Student **list, int &size) {
     } else if (strcmp(key, "age") == 0) {
         middleAgeSpecialStudent(*list, size);
     } else if (strcmp(key, "clear") == 0) {
+#ifdef _WIN32
+        system("clt");
+#else
         cout << string( 100, '\n' );
+#endif
     } else if (strcmp(key, "exit") == 0) {
         return 1;
     } else if (strcmp(key, "q") == 0) {
