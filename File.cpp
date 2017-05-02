@@ -61,7 +61,7 @@ void fileWrite(Student *list, int size){
     FILE *f1;
     if ((f1 = fopen("base", "w")) == NULL)
         cout<<"file not open\n";     
-    char buff[50]{};
+    char buff[50] = {};
 
     for (int i = 0; i < size ; i++){
         fputs(list[i].Surname, f1);
