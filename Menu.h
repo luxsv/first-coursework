@@ -17,6 +17,7 @@ void help(){
     cout<<"|  sort-s    - sort special students\n";
     cout<<"|  age       - low age special\n";
     cout<<"|  del       - delete student\n";
+    cout<<"|  clear     - clear console\n";
     cout<<"|  exit      - exit program (or q alternative commad)\n";
 }
 
@@ -67,7 +68,7 @@ int menu(Student **list, int &size) {
         middleAgeSpecialStudent(*list, size);
     } else if (strcmp(key, "clear") == 0) {
 #ifdef _WIN32
-        system("clt");
+        system("cls");
 #else
         cout << string( 100, '\n' );
 #endif

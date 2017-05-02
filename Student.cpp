@@ -198,6 +198,7 @@ int findStudent(Student *list, int size) {
     cout<<"Press index to choose studen : ";
     int index;
     cin>>index;
+
     if (index >= size || index < 0) {
         cout<<"Error index\n"; return -1;
     }
@@ -208,8 +209,7 @@ int findStudent(Student *list, int size) {
 
 void deleteStudent(Student **list, int &size) {
     int index = findStudent(*list, size);
-    if (index >= size) {
-        cout<<"error index\n";
+    if (index >= size || index < 0) {;
         return;
     }
     --size;
