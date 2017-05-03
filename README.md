@@ -1,13 +1,14 @@
 # Coursework
 
 Information - search engine, console version
+###
 Detailed in the file task.txt
 
 ### New Features!
 
   - Save to file base
 
-### Installation linux
+### Installation linux and macOS
 Install and run app
 
 ```sh

@@ -44,7 +44,7 @@ int menu(Student **list, int &size) {
         char ch;
         cin>>ch;
         switch(ch){
-            case '1':printList(*list, size);
+            case '1': printList(*list, size);
                 break;
             case '2': printListIsCollege(*list,size);
                 break;
@@ -77,7 +77,7 @@ int menu(Student **list, int &size) {
     } else if (strcmp(key, "q") == 0) {
         return 1;
     } else {
-        cout<<"-- eror comand --\n";
+        cout<<"-- eror command --\n";
     }
     return 0;
 }

@@ -110,6 +110,7 @@ void printList(Student *list, int size){
     }
 }
 
+
 void printListIsSpeciall(Student *list, int size, SpecialList a){
     sortStudentName(list ,size);
     cout<<"- - - - - - - - - - - - - - - - - - - - - - - - -\n"; 
@@ -136,8 +137,8 @@ void printListIsSpeciall(Student *list, int size, SpecialList a){
         }
     }
 
-
 }
+
 
 void printListIsCollege(Student *list, int size){
     sortStudentName(list ,size);
@@ -160,6 +161,7 @@ void printListIsCollege(Student *list, int size){
         }
     }
 }
+
 
 void printStudent(Student *list, int i) {
     cout<<"- - - - - - - - - - - - \n";
@@ -202,9 +204,9 @@ int findStudent(Student *list, int size) {
     if (index >= size || index < 0) {
         cout<<"Error index\n"; return -1;
     }
+    
     return index;
 }
-
 
 
 void deleteStudent(Student **list, int &size) {
