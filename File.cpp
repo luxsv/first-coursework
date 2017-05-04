@@ -11,7 +11,6 @@ void copyBase(Student **list, int &size, char buffstr[]){
         temp[i] = list[0][i];
     }
     char buff[50] = {};
-    
     for (int i = 0,j = 0, fl = 0; buff[i] == '\0'; ++i, ++j) {
         if (buffstr[i] == ':') {
             switch(fl){

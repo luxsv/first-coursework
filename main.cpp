@@ -1,9 +1,6 @@
-#include <cstring>
 #include "Student.h"
 #include "Menu.h"
 #include "File.h"
-
-using namespace std;
 
 int main () {
     int size = 0;
