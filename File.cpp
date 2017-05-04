@@ -11,6 +11,7 @@ void copyBase(Student **list, int &size, char buffstr[]){
         temp[i] = list[0][i];
     }
     char buff[50] = {};
+    
     for (int i = 0,j = 0, fl = 0; buff[i] == '\0'; ++i, ++j) {
         if (buffstr[i] == ':') {
             switch(fl){
@@ -28,7 +29,6 @@ void copyBase(Student **list, int &size, char buffstr[]){
                     break;
                 default: break; 
             }  
-            
             memset(&buff,0,50);
             ++fl;
             j = -1;
@@ -83,6 +83,5 @@ void fileWrite(Student *list, int size){
         fputc(':', f1);
         fputc('\n', f1);
     }   
-
     fclose(f1);
 }
