@@ -164,6 +164,7 @@ void printListIsCollege(Student *list, int size){
 
 
 void printStudent(Student *list, int i) {
+    if (i < 0) {return;} 
     cout<<"- - - - - - - - - - - - \n";
     cout<<list[i].Surname<<" "<<list[i].Name<<" "<<list[i].MiddleName<<endl;
     cout<<"Age : "<<list[i].Age<<endl; cout<<"finish college : ";
@@ -191,11 +192,17 @@ void printAll(Student *list, int size) {
 int findStudent(Student *list, int size) {
     cout<<"enter lastname find student : ";
     char key[50];
+    bool fl = true;
     getchar();
     cin>>key;
     for (int i = 0; i < size; i++) {
-        if (strstr(list[i].Surname, key) != nullptr)
+        if (strstr(list[i].Surname, key) != nullptr) {
         cout<<"find index "<<i<<" : "<<list[i].Name<<" "<<list[i].Surname<<endl;
+        fl = false;}
+    }
+    if (fl) {
+        cout << "Student not found\n";
+        return -1;
     }
     cout<<"Press index to choose studen : ";
     int index;
